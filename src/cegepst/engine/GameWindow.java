@@ -37,22 +37,14 @@ public class GameWindow extends JFrame {
         setVisible(true);
         before = System.currentTimeMillis();
         while(playing) {
-
             bufferedImage = new BufferedImage(800, 600, BufferedImage.TYPE_INT_RGB);
-
             buffer = bufferedImage.createGraphics();
             RenderingHints rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             rh.put(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
             buffer.setRenderingHints(rh);
-
-
-
             update();
-
             drawOnBuffer();
-
             drawOnScreen();
-
             long sleep = SLEEP - (System.currentTimeMillis() - before);
             if (sleep < 0) {
                 sleep = 4;
@@ -74,9 +66,7 @@ public class GameWindow extends JFrame {
     }
 
     private void drawOnBuffer() {
-        buffer.setPaint(Color.red);
-        buffer.fillOval(ball.getX(), ball.getY(), ball.getRadius() * 2, ball.getRadius() * 2);
-
+        ball.draw(buffer);
         buffer.setPaint(Color.white);
         buffer.drawString("Score: " + score, 10, 20);
     }

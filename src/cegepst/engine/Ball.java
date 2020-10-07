@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Ball {
 
-    private int radius = 25;
+    private final int radius;
     private int x;
     private int y;
     private int velocityX;

@@ -4,7 +4,6 @@ import java.awt.*;
 import java.util.Random;
 
 public class Ball {
-
     private final int radius;
     private int x;
     private int y;

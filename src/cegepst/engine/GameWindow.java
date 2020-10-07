@@ -3,10 +3,9 @@ package cegepst.engine;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.Random;
 
-public class GameWindow extends JFrame {
-
+public class GameWindow {
+    private JFrame jFrame;
     private static  final int SLEEP = 15;
     private long before;
     private JPanel panel;
@@ -17,24 +16,23 @@ public class GameWindow extends JFrame {
     private Graphics2D buffer;
 
     public GameWindow() {
-        setSize(800, 600);
-        setLocationRelativeTo(null);
-        setResizable(false);
-        setTitle("Bouncing Ball Game");
+        jFrame = new JFrame();
+        jFrame.setSize(800, 600);
+        jFrame.setLocationRelativeTo(null);
+        jFrame.setResizable(false);
+        jFrame.setTitle("Bouncing Ball Game");
         //setUndecorated(true); no top bar
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel = new JPanel();
         panel.setBackground(Color.blue);
         panel.setFocusable(true);
         panel.setDoubleBuffered(true);
-        add(panel);
-
+        jFrame.add(panel);
         ball = new Ball(25);
     }
 
     public void start() {
-        setVisible(true);
+        jFrame.setVisible(true);
         before = System.currentTimeMillis();
         while(playing) {
             bufferedImage = new BufferedImage(800, 600, BufferedImage.TYPE_INT_RGB);
@@ -77,6 +75,4 @@ public class GameWindow extends JFrame {
         Toolkit.getDefaultToolkit().sync();
         graphics2D.dispose();
     }
-
-
 }

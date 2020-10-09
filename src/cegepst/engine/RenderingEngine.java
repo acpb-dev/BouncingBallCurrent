@@ -23,11 +23,11 @@ public class RenderingEngine {
         jFrame.dispose();
     }
 
-    public Graphics2D getRenderingBuffer() {
+    public Buffer getRenderingBuffer() {
         bufferedImage = new BufferedImage(800, 600, BufferedImage.TYPE_INT_RGB);
         Graphics2D graphics = bufferedImage.createGraphics();
         graphics.setRenderingHints(getOptimalRenderingHints());
-        return graphics;
+        return new Buffer(graphics);
     }
 
     private RenderingHints getOptimalRenderingHints() {

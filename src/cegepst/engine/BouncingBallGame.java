@@ -21,7 +21,6 @@ public class BouncingBallGame extends Game {
 
     }
 
-
     @Override
     public void update() {
         ball.update();
@@ -29,10 +28,10 @@ public class BouncingBallGame extends Game {
             score += 10;
         }
     }
+
     @Override
-    public void draw(Graphics2D buffer) {
+    public void draw(Buffer buffer) {
         ball.draw(buffer);
-        buffer.setPaint(Color.white);
-        buffer.drawString("Score: " + score, 10, 20);
+        buffer.drawText("Score: " + score, 10, 10, Color.white);
     }
 }

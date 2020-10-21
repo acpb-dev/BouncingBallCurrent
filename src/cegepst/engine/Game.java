@@ -1,7 +1,5 @@
 package cegepst.engine;
 
-import java.awt.*;
-
 public abstract class Game {
 
     private RenderingEngine renderingEngine;
@@ -30,7 +28,7 @@ public abstract class Game {
             update();
             draw(renderingEngine.getRenderingBuffer());
             renderingEngine.renderBufferOnScreen();
-            gameTime.sleep();
+            gameTime.syncronize();
         }
         renderingEngine.stop();
     }

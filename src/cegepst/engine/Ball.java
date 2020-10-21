@@ -15,8 +15,8 @@ public class Ball {
 
         x = getRandom(radius * 2, 800 - radius * 2);
         y = getRandom(radius * 2, 600 - radius * 2);
-        velocityX = getRandom(0, 1) == 0 ? 10 : -10;
-        velocityY = getRandom(0, 1) == 0 ? 10 : -10;
+        velocityX = getRandom(0, 1) == 0 ? 5 : -5;
+        velocityY = getRandom(0, 1) == 0 ? 5 : -5;
     }
 
     public void update() {
